@@ -86,7 +86,7 @@ ggplot(Indfielding, aes(x=Matches, y=Dismissals, col=wktkeeper)) +
 ## Individual player data
 
 ```{r message=FALSE, warning=FALSE}
-MegLanning <- fetch_player(329336, "ODI")
+MegLanning <- fetch_player_data(329336, "ODI")
 MLave <- with(MegLanning, sum(Score, na.rm=TRUE) / (sum(is.na(Score)) - sum(NotOut)))
 names(MLave) <- paste("Average =", round(MLave,2))
 ggplot(MegLanning) + 
